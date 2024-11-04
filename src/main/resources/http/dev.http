@@ -1,0 +1,63 @@
+### Populate database with test data
+POST http://localhost:7070/trips/populate
+Content-Type: application/json
+
+### Get all trips
+GET http://localhost:7070/trips
+
+### Get trip by id (replace 2 with actual id)
+GET http://localhost:7070/trips/2
+
+### Create new trip
+POST http://localhost:7070/trips
+Content-Type: application/json
+
+{
+  "name": "Copenhagen City Walk",
+  "tripCategory": "CITY",
+  "startTime": "2024-04-01T10:00:00",
+  "endTime": "2024-04-01T12:00:00",
+  "location": "Copenhagen",
+  "latitude": 55.6761,
+  "longitude": 12.5683,
+  "price": 299.99
+}
+
+### Update trip (replace 1 with actual id)
+PUT http://localhost:7070/trips/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Updated Copenhagen City Walk",
+  "tripCategory": "CITY",
+  "startTime": "2024-04-01T10:00:00",
+  "endTime": "2024-04-01T12:00:00",
+  "location": "Copenhagen",
+  "latitude": 55.6761,
+  "longitude": 12.5683,
+  "price": 349.99
+}
+
+### Add guide to trip (replace IDs with actual ids)
+PUT http://localhost:7070/trips/1/guides/1
+
+### Delete trip (replace 1 with actual id)
+DELETE http://localhost:7070/trips/1
+
+
+### Get trips by category (BEACH, CITY, LAKE)
+GET http://localhost:7070/trips/category/BEACH
+Accept: application/json
+
+### Get trips by another category
+GET http://localhost:7070/trips/category/CITY
+Accept: application/json
+
+### Get total price overview for all guides
+GET http://localhost:7070/trips/guides/totalprice
+Accept: application/json
+
+### Test invalid category (should return 400 error)
+GET http://localhost:7070/trips/category/INVALID
+Accept: application/json
