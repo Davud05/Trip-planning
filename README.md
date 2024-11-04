@@ -8,7 +8,7 @@ Dette projekt er et backend system for an e-commerce platform offering trip plan
 - Maven
 - Lombok
 - JDK
-
+  https://github.com/Davud05/Trip-planning
 
 ## Database 
 Jeg har kaldt databasen for trips, så hvis det ikke er på jeres lokale maskine, virker det ikke :)
